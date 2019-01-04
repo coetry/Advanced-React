@@ -1,12 +1,16 @@
-import App, { Container } from 'next/app'
+import App, { Container } from "next/app"
+import Page from "../components/Page"
 
 class SickFits extends App {
   render() {
-    const { Component: Page } = this.props
-    return <Container>
-      <div><code>بسم الله</code></div>
-      <Page />
-    </Container>
+    const { Component } = this.props
+    return (
+      <Container>
+        <Page>
+          <Component />
+        </Page>
+      </Container>
+    )
   }
 }
 
