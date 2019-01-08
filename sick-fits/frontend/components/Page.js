@@ -1,5 +1,6 @@
 import styled, { ThemeProvider, injectGlobal } from "styled-components"
 import Header from "./Header"
+import Meta from "./Meta"
 
 const theme = {
   red: "#FF0000",
@@ -25,14 +26,20 @@ const Inner = ({ children }) => (
 
 const Page = ({ children }) => (
   <div>
+    <Meta />
     <Header />
     <Inner>{children}</Inner>
     <style jsx global>
       {`
+        html {
+          box-sizing: border-box;
+          font-size: 10px;
+        }
         body {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
             Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
             "Segoe UI Symbol";
+          font-size: 1.5rem;
         }
       `}
     </style>

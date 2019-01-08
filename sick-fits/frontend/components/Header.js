@@ -2,6 +2,22 @@ import Nav from "./Nav"
 import Link from "next/link"
 import styled from "styled-components"
 import theme from "../utils/theme"
+import Router from "next/router"
+import NProgress from "nprogress"
+
+Router.onRouteChangeStart = () => {
+  console.log("changing")
+  NProgress.start()
+}
+
+Router.onRouteChangeComplete = () => {
+  console.log("done")
+  NProgress.done()
+}
+
+Router.onRouteChangeError = () => {
+  NProgress.done()
+}
 
 const Logo = ({ children }) => (
   <h1>
